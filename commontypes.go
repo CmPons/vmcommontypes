@@ -1,7 +1,5 @@
 package commontypes
 
-import "fmt"
-
 type Command struct {
 	Identifier    string
 	Description   string
