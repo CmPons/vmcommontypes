@@ -8,7 +8,7 @@ type Command struct {
 }
 
 func (c *Command) Usage() string {
-	ret := c.Identifier + "\t" + c.Description
+	ret := c.Identifier + "\t" + c.Description + "\n"
 
 	for _, command := range c.Variables {
 		ret += "\t" + command.Usage()
