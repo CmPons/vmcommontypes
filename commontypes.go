@@ -8,10 +8,21 @@ type Command struct {
 }
 
 func (c *Command) Usage() string {
-	ret := c.Identifier + "\t" + c.Description + "\n"
+	ret := c.Identifier + "\t\t\t\t" + c.Description + "\n"
 
 	for _, command := range c.Variables {
-		ret += "\t" + command.Usage()
+		ret += "\t\t\t\t" + command.Usage()
+	}
+
+	return ret
+}
+
+type CommandList []Command
+
+func (cl CommandList) Usage() string {
+	var ret string
+	for _, command := range cl {
+		ret += command.Usage() + "\n"
 	}
 
 	return ret
